@@ -1,7 +1,7 @@
 HIERARCHY
 ROOT Hips
 {
-  OFFSET 0.00000 0.00000 0.00000
+  OFFSET 0.00000 0.00000 0.05000
   CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
   JOINT J1
   {
@@ -53,7 +53,7 @@ ROOT Hips
       CHANNELS 3 Zrotation Xrotation Yrotation
       JOINT J11
       {
-        OFFSET -1.90404 7.44900 0.05000
+        OFFSET 0.00000 0.00000 0.05000
         CHANNELS 3 Zrotation Xrotation Yrotation
       }
     }
@@ -68,7 +68,7 @@ ROOT Hips
       CHANNELS 3 Zrotation Xrotation Yrotation
       JOINT J14
       {
-        OFFSET -2.72106 7.35083 0.05000
+        OFFSET 0.00000 0.00000 0.05000
         CHANNELS 3 Zrotation Xrotation Yrotation
       }
     }

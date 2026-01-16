@@ -1,0 +1,11 @@
+instalirao sam docker, preko njega sam runnao openpose koji sam pullao s uoresearch/openpose : docker pull uoresearch/openpose-cpu
+koristio sam openpose cpu only verziju jer gpu verzije nisu kompatibilne s novim driverima. cpu verzija je sporija, ali nam je bila dovoljna
+snimili smo videe pokreta, bitno da je cijelo tijelo vidljivo i da je dobro osvjetljenje kako bi openpose mogao lakse i s vecom preciznoscu odbrediti keypoints.
+runnali u openposeu, preko dockera, za svaki video: docker run --rm -v C:/openpose/input:/openpose/input -v C:/openpose/output:/openpose/output uoresearch/openpose-cpu ./build/examples/openpose/openpose.bin --video /openpose/input/video10.mp4 --write_json /openpose/output/video10 --display 0 --render_pose 0 --face
+video10.mp4 je input, znači tu mijenjamo po videima koje želimo obradit, /openpose/output/video10 je output mapa, tu se spremaju keypoints za sve frameove, u json obliku, i --face runnamo jer je rekao da se fokusiramo na lice na onom sastanku, kad se to runna, openpose sprema i keypoints za lice.
+video5_out.avi je kako to izgleda kad openpose runnamo na neki video, to je na onaj sto sam poslao u discord prije
+dobivamo mape pune jsona po frameovima videa , runnamo python skriptu (u githubu skripta1.py) koja odabire keypointse koje želimo spremiti, odabire najbitnije točke na licu i isto ih sprema, te sve sprema zajedno u jedan json kako bi se u blenderu lakše koristilo. 
+openpose_video5.json i ostali (video6,7,8,9,10) su primjeri tih jsona na githubu, ako treba
+u blenderu isto imamo skriptu koja uzima keypointse i translatira ih u prikladan oblik da dobijemo animaciju u blenderu.
+ovu skriptu ce stavit kolega i jos za blender, stavit cemo usporedbu originalnih videa i animacija u blenderu
+
